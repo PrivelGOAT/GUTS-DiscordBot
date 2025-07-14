@@ -3,11 +3,11 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "Gutz-DiscordBot"
-version = "3.5.0" 
+name = "GUTS-DiscordBot"
+version = "3.5.0"
 description = "A highly customisable Discord bot"
 readme = "README.md"
-authors = [{ name = "Cog Creators" }]
+authors = [{ name = "PrivelGOAT" }]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Framework :: AsyncIO",
@@ -28,13 +28,13 @@ classifiers = [
 dynamic = ["requires-python", "dependencies", "optional-dependencies"]
 
 [project.urls]
-"Homepage" = "https://github.com/Cog-Creators/Red-DiscordBot"
-"Discord Server" = "https://discord.gg/QY2Ss38u"
-"Documentation" = "https://docs.discord.red"
-"Donate on Patreon" = "https://www.patreon.com/Red_Devs"
-"Issue Tracker" = "https://github.com/Cog-Creators/Red-DiscordBot/issues"
-"Source Code" = "https://github.com/Cog-Creators/Red-DiscordBot"
-"Changelog" = "https://docs.discord.red/en/stable/changelog.html"
+Homepage = "https://github.com/PrivelGOAT/GUTS-DiscordBot"
+DiscordServer = "https://discord.gg/QY2Ss38u"
+Documentation = "https://docs.discord.red"
+DonateOnPatreon = "https://www.patreon.com/Red_Devs"
+IssueTracker = "https://github.com/PrivelGOAT/GUTS-DiscordBot/issues"
+SourceCode = "https://github.com/PrivelGOAT/GUTS-DiscordBot"
+Changelog = "https://docs.discord.red/en/stable/changelog.html"
 
 [project.scripts]
 redbot = "redbot.__main__:main"
@@ -43,17 +43,22 @@ redbot-setup = "redbot.setup:run_cli"
 [project.entry-points.pytest11]
 red-discordbot = "redbot.pytest"
 
+[tool.poetry]
+name = "guts-discordbot"
+version = "3.5.0"
+packages = [{ include = "redbot" }]
+
 [tool.black]
 line-length = 99
-required-version = '23'
-target-version = ['py38']
-include = '\.py$'
+required-version = "23"
+target-version = ["py38"]
+include = "\\.py$"
 force-exclude = '''
 /(
     redbot\/vendored
 )/
-
 '''
 
 [tool.pytest.ini_options]
-asyncio_mode = 'auto'
+asyncio_mode = "auto"
+
