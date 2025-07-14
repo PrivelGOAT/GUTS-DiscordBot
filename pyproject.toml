@@ -3,7 +3,8 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "Red-DiscordBot"
+name = "Gutz-DiscordBot"
+version = "3.5.0" 
 description = "A highly customisable Discord bot"
 readme = "README.md"
 authors = [{ name = "Cog Creators" }]
@@ -24,11 +25,11 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Topic :: Communications :: Chat",
 ]
-dynamic = ["version", "requires-python", "dependencies", "optional-dependencies"]
+dynamic = ["requires-python", "dependencies", "optional-dependencies"]
 
 [project.urls]
 "Homepage" = "https://github.com/Cog-Creators/Red-DiscordBot"
-"Discord Server" = "https://discord.gg/red"
+"Discord Server" = "https://discord.gg/QY2Ss38u"
 "Documentation" = "https://docs.discord.red"
 "Donate on Patreon" = "https://www.patreon.com/Red_Devs"
 "Issue Tracker" = "https://github.com/Cog-Creators/Red-DiscordBot/issues"
@@ -51,6 +52,7 @@ force-exclude = '''
 /(
     redbot\/vendored
 )/
+
 '''
 
 [tool.pytest.ini_options]
