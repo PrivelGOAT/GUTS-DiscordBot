@@ -1,52 +1,26 @@
 [build-system]
-requires = ["setuptools>=64", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "GUTS-DiscordBot"
-version = "3.5.0"
-description = "A highly customisable Discord bot"
-readme = "README.md"
-authors = [{ name = "PrivelGOAT" }]
-classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Framework :: AsyncIO",
-    "Intended Audience :: Developers",
-    "Intended Audience :: End Users/Desktop",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-    "Natural Language :: English",
-    "Operating System :: MacOS :: MacOS X",
-    "Operating System :: Microsoft :: Windows",
-    "Operating System :: POSIX :: Linux",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Topic :: Communications :: Chat",
-]
-dynamic = ["requires-python", "dependencies", "optional-dependencies"]
-
-[project.urls]
-Homepage = "https://github.com/PrivelGOAT/GUTS-DiscordBot"
-DiscordServer = "https://discord.gg/QY2Ss38u"
-Documentation = "https://docs.discord.red"
-DonateOnPatreon = "https://www.patreon.com/Red_Devs"
-IssueTracker = "https://github.com/PrivelGOAT/GUTS-DiscordBot/issues"
-SourceCode = "https://github.com/PrivelGOAT/GUTS-DiscordBot"
-Changelog = "https://docs.discord.red/en/stable/changelog.html"
-
-[project.scripts]
-redbot = "redbot.__main__:main"
-redbot-setup = "redbot.setup:run_cli"
-
-[project.entry-points.pytest11]
-red-discordbot = "redbot.pytest"
+requires = ["setuptools>=64", "wheel", "poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "guts-discordbot"
 version = "3.5.0"
+description = "A highly customisable Discord bot"
+authors = [{ name = "PrivelGOAT" }]
+readme = "README.md"
 packages = [{ include = "redbot" }]
+homepage = "https://github.com/PrivelGOAT/GUTS-DiscordBot"
+license = "GPL-3.0-or-later"
+keywords = ["discord", "bot", "redbot"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.12"  # 🔄 Rend compatible avec les versions stables (évite 3.13)
+red-commons = "^1.0.0"  # ✅ Ajoute la dépendance manquante
+Red-DiscordBot = { git = "https://github.com/Cog-Creators/Red-DiscordBot.git", rev = "V3/develop" }  # ✅ Framework principal
+
+[tool.poetry.scripts]
+redbot = "redbot.__main__:main"
+redbot-setup = "redbot.setup:run_cli"
 
 [tool.black]
 line-length = 99
